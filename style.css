@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Rubik:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.navigation {
+    height: 5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Rubik', cursive;
+    margin-left: -2px;
+}
+
+.navigation-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+    margin-left: 8%;
+}
+
+.navigation-links a{
+    color: darkgrey;
+    font: normal 700 1.1em 'PT Sans';
+}
+
+.navigation-links a:first-child {
+    color: #000;
+}
+
+.button {
+    margin-right: 20px;
+    border: none;
+    padding: 1rem 1.4em;
+
+    font-family: 'PT Sans';
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.sign {
+    border: 1px solid #000;
+    background: none;
+}
+
+.send {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Parte Central */
+
+main {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+   
+}
+
+section, aside {
+    margin-top: 3rem;
+}
+
+section {
+    display: grid;
+    grid-template-rows: repeat(4, minmax(60, auto));
+
+    padding-right: 0 2em;
+}
+
+.section-link {
+    height: fit-content;
+    width: fit-content;
+    color: #000;
+    background-color: gray;
+    padding: 0.75rem 1.15em;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.8em;
+}
+
+section h1 {
+    font-family: 'PT Sans', cursive;
+    font-size: 3.5em;
+    padding-right: 2em;
+}
+
+.section-description {
+    color: darkgrey;
+    width: 26rem;
+    font-family: 'Rubik', cursive;
+    font-size: 0.9em;
+}
+
+
+
+
+aside img {
+    width: 70%;
+}
