@@ -10,6 +10,7 @@
 body {
     width: 85%;
     margin: 0 auto;
+    background-color: #f3f4f6;
 }
 
 .navigation {
@@ -74,7 +75,7 @@ main {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 0.8fr;
-   
+    grid-auto-rows: auto;
 }
 
 section, aside {
@@ -148,3 +149,51 @@ aside {
 aside img {
     width: 70%;
 }
+
+.section-services {
+    grid-column: 1 / 3;
+    text-align: center;
+    margin-top: 6.5rem;
+}
+
+.section-services h4 {
+    font-size: 1.5em;
+    font-family: 'PT Sans';
+    margin-bottom: 1rem;
+    color: #70b5e8;
+}
+
+.section-services h2 {
+    width: 90%;
+    font-size: 2.8em;
+    font-family: 'Rubik';
+    margin: 0 auto 4rem;
+}
+
+.section-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.card {
+    width: 20em;
+    height: 18rem;
+    background-color: #fff;
+    padding: 1.5em 2.5em;
+    text-align: left;
+    font-family: 'Rubik';
+    box-shadow: 0.4px 0 8px rgba(124, 123, 123, 0.253);
+}
+
+.card img, .card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.card img {
+    width: 100px;
+}
+
