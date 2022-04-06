@@ -330,3 +330,11 @@ footer div {
 .sinal {
     color: #0388cd;
 }
+
+/* Responsividade  */
+
+@media screen and (max-width: 786px) {
+    .navigation-buttons {
+        display: none;
+    }
+}
