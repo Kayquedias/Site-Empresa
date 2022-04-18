@@ -331,10 +331,62 @@ footer div {
     color: #0388cd;
 }
 
+.navigation-menu {
+    display: none;
+}
+
 /* Responsividade  */
 
 @media screen and (max-width: 786px) {
+    .navigation-links > a {
+       display: none;
+    }
+
+    .navigation-links {
+        justify-content: flex-end;
+    }
+
     .navigation-buttons {
         display: none;
+    }
+
+    .logo {
+        font-size: 1em;
+    }
+
+    .navigation-logo img{
+        width: 40px;
+    }
+
+    .navigation-logo {
+        width: 40%;
+    }
+
+    .navigation-menu {
+        display: inline-block;
+        cursor: pointer;
+        width: 30px;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+
+    .main-section, .section-services, .section-product {
+       grid-column: 1 / 3;
+    }
+
+    aside, .img-aside {
+        display: none;
+    }
+
+    aside img {
+        width: 100%;
+        height: 50%;
+    }
+
+    .card {
+        margin-bottom: 2rem;
     }
 }
