@@ -8,12 +8,15 @@
 }
 
 body {
-    width: 85%;
+    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 4rem;
     background-color: #f3f4f6;
 }
 
 .navigation {
+    width: 100%;
     height: 5rem;
 
     display: flex;
@@ -24,19 +27,21 @@ body {
 .navigation-logo {
     display: flex;
     align-items: center;
+    gap: 4px;
+    width: max-content;
 }
 
 .logo {
     font-family: 'Rubik', cursive;
     margin-left: -2px;
+    width: max-content;
 }
 
 .navigation-links {
+    max-width: 428px;
     width: 40%;
     display: flex;
     justify-content: space-between;
-
-    margin-left: 8%;
 }
 
 .navigation-links a{
@@ -74,8 +79,10 @@ body {
 main {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
+
+    margin-bottom: 3rem;
 }
 
 section, aside {
@@ -103,7 +110,6 @@ section, aside {
 .main-section h1 {
     font-family: 'PT Sans', cursive;
     font-size: 3.8em;
-    padding-right: 1.6em;
 }
 
 .main-section div {
@@ -163,7 +169,7 @@ aside img {
     color: #70b5e8;
 }
 
-.section-services h2 {
+.section-services h1 {
     width: 90%;
     font-size: 2.8em;
     font-family: 'Rubik';
@@ -173,6 +179,7 @@ aside img {
 .section-cards {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-evenly;
     margin: 0 auto;
 }
@@ -198,8 +205,12 @@ aside img {
 }
 
 .section-product {
-    width: 95%;
-    margin: 6.5rem 0;
+    width: 100%;
+    grid-column: 1 / 3;
+}
+
+.section > div {
+    text-align: center;
 }
 
 .section-product h4 {
@@ -209,7 +220,7 @@ aside img {
     color: #70b5e8;
 }
 
-.section-product h2 {
+.section-product h1 {
     font-size: 2.2em;
     font-family: 'Rubik';
     margin: 0 auto 2rem;
@@ -222,27 +233,30 @@ aside img {
     line-height: 30px;
 }
 
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    column-gap: 32px;
+}
+
 .product-cards {
+    width: 100%;
     margin-top: 3rem;
+    place-self: center;
 }
 
 .horizontal-card {
     background-color: #fff;
-    width: 90%;
-    height: 10rem;
+    width: 100%;
+    min-height: 10rem;
     margin-bottom: 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2em;
+    gap: 16px;
+    padding: 1rem;
 }
 
 .horizontal-card:last-child {
     background: #0388cd;
-}
-
-.horizontal-card img {
-    width: 40px;
 }
 
 .horizontal-card:nth-child(2) div:first-child{
@@ -254,12 +268,16 @@ aside img {
 }
 
 .horizontal-card img {
-    width: 40px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.horizontal-card:first-child img {
+    padding: 0;
 }
 
 .horizontal-card div:first-child {
-    width: 80px;
-    height: 80px;
+    max-width: calc(5rem + 20%);
     background-color: rgba(144, 238, 144, 0.589);
 
     display: flex;
@@ -285,27 +303,29 @@ aside img {
 }
 
 .img-aside {
-    margin: 6.5rem 0;
+    position: relative;
 }
 
 .img-aside div {
     display: block;
     position: absolute;
-    margin-top: -18rem;
     width: 18em;
     height: 18rem;
     background-color: #f3f4f6;
     z-index: 2;
+
+    bottom: 0;
+    left: 0;
 }
 
 .img-aside img {
-    width: 34em;
+    width: 100%;
     z-index: 0;
 }
 
 .img-aside div img {
     position: relative;
-    top: 15%;
+    top: 17%;
     width: 15em;
 }
 
@@ -325,6 +345,7 @@ footer div {
 .mario {
     font-family: 'Rubik',sans-serif;
     text-align: center;
+    width: max-content;
 }
 
 .sinal {
@@ -337,17 +358,17 @@ footer div {
 
 /* Responsividade  */
 
-@media screen and (max-width: 786px) {
-    .navigation-links > a {
+@media screen and (max-width: 767px) {
+    body {
+        padding: 0 1.6rem;
+    }
+
+    .navigation-links > a, .navigation-buttons {
        display: none;
     }
 
     .navigation-links {
         justify-content: flex-end;
-    }
-
-    .navigation-buttons {
-        display: none;
     }
 
     .logo {
@@ -356,10 +377,6 @@ footer div {
 
     .navigation-logo img{
         width: 40px;
-    }
-
-    .navigation-logo {
-        width: 40%;
     }
 
     .navigation-menu {
@@ -374,7 +391,16 @@ footer div {
     }
 
     .main-section, .section-services, .section-product {
-       grid-column: 1 / 3;
+       width: 100%;
+    }
+
+    .main-section h1, .section-services h1, .section-product h1 {
+        font-size: 2.4rem;
+        padding-right: 0;
+    }
+
+    .section-description {
+        width: 100%;
     }
 
     aside, .img-aside {
@@ -387,6 +413,149 @@ footer div {
     }
 
     .card {
+        text-align: center;
         margin-bottom: 2rem;
     }
+
+    .card h3 {
+        font-size: 1.4rem;
+    }
+
+    .section-product {
+        margin-bottom: 40px;
+    }
+
+    .product-cards {
+        grid-column: 1 /3;
+
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .horizontal-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 20rem;
+        height: auto;
+        padding: 2rem;
+
+        align-items: center;
+        flex-direction: column;
+        gap: 16px
+    }
+
+    .horizontal-card img, .horizontal-card div:last-child, .horizontal-card div:first-child {
+        width: 100%;
+        height: auto;
+    }
+
+    .horizontal-card div:first-child img {
+        max-width: 16rem;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .mario {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .navigation-links > a, .navigation-buttons {
+        display: none;
+     }
+ 
+    .navigation-links {
+        justify-content: flex-end;
+    }
+
+    .navigation-menu {
+        display: inline-block;
+        cursor: pointer;
+        width: 30px;
+    }
+
+    .main-section h1 {
+        padding-right: 0.6rem;
+    }
+
+    aside img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .products-container {
+        margin: 3rem auto;
+    }
+
+    .product-cards {
+        margin-top: 0;
+    }
+
+    .horizontal-card {
+        height: max-content;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .horizontal-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .horizontal-card div {
+        width: 100%;
+    }
+
+    .horizontal-card div:first-child {
+        max-width: 12rem;
+        width: 70%;
+        height: auto;
+    }
+
+    .horizontal-card div:first-child img {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .horizontal-card:first-child div:first-child img {
+        padding: 0;
+    }
+
+    .horizontal-card div:last-child {
+        width: 100%;
+    }
+
+    .img-aside {
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .img-aside div {
+        display: none;
+        position: absolute;
+        width: 25%;
+        /* height: 18rem; */
+        background-color: #f3f4f6;
+        z-index: 2;
+    }
+    
+
+    .img-aside img {
+        object-fit: cover;
+        object-position: -5rem;
+        width: 100%;
+    }
+
+    .img-aside div img {
+        position: relative;
+        /* top: 0; */
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
 }
